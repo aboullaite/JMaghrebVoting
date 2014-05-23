@@ -26,7 +26,7 @@ public class Application extends Controller {
     	DataSource ds= DB.getDataSource();
     	Connection conn=DB.getConnection();
     	String INSERT_SQL = "INSERT INTO votes " + "(idSession, idVoter, vote, time) "
-                + " VALUES " + "('"+idSession+"', '"+idVoter +"', '"+vote+"', '"+URLDecoder.decode(time, "UTF-8")+"')";
+                + " VALUES " + "('"+idSession+"', '"+URLDecoder.decode(idVoter, "UTF-8") +"', '"+vote+"', '"+URLDecoder.decode(time, "UTF-8")+"')";
     	
 			Statement stat=conn.createStatement();
 			stat.execute(INSERT_SQL);
