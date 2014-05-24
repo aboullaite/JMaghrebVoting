@@ -37,7 +37,6 @@ public class Application extends Controller {
 			
 			return ok("error when inserting");
 		}
-
     	return ok("Done");
      
     }
