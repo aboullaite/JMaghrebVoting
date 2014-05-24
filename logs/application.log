@@ -1,0 +1,9 @@
+2014-05-24 22:15:34,898 - [INFO] - from play in pool-13-thread-6 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2014-05-24 22:15:54,791 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:postgresql://localhost:5432/jmaghrebvoting
+
+2014-05-24 22:15:55,362 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
