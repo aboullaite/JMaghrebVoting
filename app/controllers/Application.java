@@ -3,9 +3,7 @@ package controllers;
 
 
 import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.sql.DataSource;
@@ -14,13 +12,13 @@ import play.db.DB;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-
 public class Application extends Controller {
 
     public static Result index() {
-        return ok("ok");
+        return ok(views.html.index.render("[100,30,20]"));
     }
-    
+   
+   
     public static Result saveVote(String idSession, String idVoter, String vote, String time) {
     	try {
     	DataSource ds= DB.getDataSource();

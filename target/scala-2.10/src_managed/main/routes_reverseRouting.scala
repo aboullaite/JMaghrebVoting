@@ -1,6 +1,6 @@
 // @SOURCE:C:/Users/mohammed/WorkspacePlay/JmaghrebVoting/conf/routes
-// @HASH:12dd33edcaf78fc554b3f64ec8bd12cc6d38f23a
-// @DATE:Fri May 23 11:52:34 WEST 2014
+// @HASH:0f0806ed26eb793ebd3cc4c33fddb9937258bda4
+// @DATE:Tue May 27 16:39:30 WEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,16 +13,16 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:10
-// @LINE:7
+// @LINE:12
+// @LINE:9
 // @LINE:6
 package controllers {
 
-// @LINE:10
+// @LINE:12
 class ReverseAssets {
     
 
-// @LINE:10
+// @LINE:12
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -31,12 +31,12 @@ def at(file:String): Call = {
 }
                           
 
-// @LINE:7
+// @LINE:9
 // @LINE:6
 class ReverseApplication {
     
 
-// @LINE:7
+// @LINE:9
 def saveVote(idSession:String, idVoter:String, vote:String, time:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "idSession/" + implicitly[PathBindable[String]].unbind("idSession", dynamicString(idSession)) + "/idVoter/" + implicitly[PathBindable[String]].unbind("idVoter", dynamicString(idVoter)) + "/vote/" + implicitly[PathBindable[String]].unbind("vote", dynamicString(vote)) + "/time/" + implicitly[PathBindable[String]].unbind("time", dynamicString(time)))
 }
@@ -54,16 +54,16 @@ def index(): Call = {
                   
 
 
-// @LINE:10
-// @LINE:7
+// @LINE:12
+// @LINE:9
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:10
+// @LINE:12
 class ReverseAssets {
     
 
-// @LINE:10
+// @LINE:12
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -77,12 +77,12 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:7
+// @LINE:9
 // @LINE:6
 class ReverseApplication {
     
 
-// @LINE:7
+// @LINE:9
 def saveVote : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.saveVote",
    """
@@ -110,17 +110,17 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:10
-// @LINE:7
+// @LINE:12
+// @LINE:9
 // @LINE:6
 package controllers.ref {
 
 
-// @LINE:10
+// @LINE:12
 class ReverseAssets {
     
 
-// @LINE:10
+// @LINE:12
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -129,14 +129,14 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
-// @LINE:7
+// @LINE:9
 // @LINE:6
 class ReverseApplication {
     
 
-// @LINE:7
+// @LINE:9
 def saveVote(idSession:String, idVoter:String, vote:String, time:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.saveVote(idSession, idVoter, vote, time), HandlerDef(this, "controllers.Application", "saveVote", Seq(classOf[String], classOf[String], classOf[String], classOf[String]), "GET", """""", _prefix + """idSession/$idSession<[^/]+>/idVoter/$idVoter<[^/]+>/vote/$vote<[^/]+>/time/$time<[^/]+>""")
+   controllers.Application.saveVote(idSession, idVoter, vote, time), HandlerDef(this, "controllers.Application", "saveVote", Seq(classOf[String], classOf[String], classOf[String], classOf[String]), "GET", """ Insert votes""", _prefix + """idSession/$idSession<[^/]+>/idVoter/$idVoter<[^/]+>/vote/$vote<[^/]+>/time/$time<[^/]+>""")
 )
                       
 
