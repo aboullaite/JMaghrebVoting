@@ -2,8 +2,12 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET     /                           controllers.Application.index()
+# Login page
+GET     /login                           controllers.Application.login()
+GET     /logout                           controllers.Application.logout()
+POST    /                                controllers.Application.authenticate()
+#Home page                                   
+GET     /                                controllers.Application.index()
 
 # Insert votes
 GET     /idSession/:idSession/idVoter/:idVoter/vote/:vote/time/:time                          controllers.Application.saveVote(idSession : String, idVoter : String, vote : String, time : String)

@@ -34,9 +34,12 @@ Seq[Any](format.raw/*1.19*/("""
       <div class="row">
     <div class="col-md-10 col-md-offset-2">
         <h1>Jmaghreb Voting System</h1>
-        <p> This is just a simple application shown Jmaghreb voting System prototype </p>
+        <p> This is just a simple application shown Jmaghreb voting System prototype ... </p>
+        
             </div>
-            
+            <div class="col-md-10 col-md-offset-5">
+            <h4> <a href="""),_display_(Seq[Any](/*13.27*/routes/*13.33*/.Application.logout())),format.raw/*13.54*/("""> Log out </a></h4>
+            </div>
 </div>
         </div>
  <div class="row">
@@ -81,21 +84,21 @@ Seq[Any](format.raw/*1.19*/("""
 
  
 		
-var data = """),format.raw/*56.12*/("""{"""),format.raw/*56.13*/("""
+var data = """),format.raw/*59.12*/("""{"""),format.raw/*59.13*/("""
 			labels : ["Excellent","Good","Not bad"],
 			datasets : [
-				"""),format.raw/*59.5*/("""{"""),format.raw/*59.6*/("""
+				"""),format.raw/*62.5*/("""{"""),format.raw/*62.6*/("""
 					fillColor : "rgba(220,220,220,0.5)",
 					strokeColor : "rgba(220,220,220,1)",
-					data : """),_display_(Seq[Any](/*62.14*/message)),format.raw/*62.21*/("""
-				"""),format.raw/*63.5*/("""}"""),format.raw/*63.6*/("""
+					data : """),_display_(Seq[Any](/*65.14*/message)),format.raw/*65.21*/("""
+				"""),format.raw/*66.5*/("""}"""),format.raw/*66.6*/("""
 			]
 			
-		"""),format.raw/*66.3*/("""}"""),format.raw/*66.4*/(""";
+		"""),format.raw/*69.3*/("""}"""),format.raw/*69.4*/(""";
 	var myLine = new Chart(document.getElementById("chart").getContext("2d")).Bar(data);
 	
 	</script>
-""")))})),format.raw/*70.2*/("""
+""")))})),format.raw/*73.2*/("""
 """))}
     }
     
@@ -108,11 +111,11 @@ var data = """),format.raw/*56.12*/("""{"""),format.raw/*56.13*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue May 27 16:44:34 WEST 2014
+                    DATE: Tue May 27 21:32:02 WEST 2014
                     SOURCE: C:/Users/mohammed/WorkspacePlay/JmaghrebVoting/app/views/index.scala.html
-                    HASH: cb8c367d463d95f7505f17615656cf4e7813c468
-                    MATRIX: 774->1|885->18|922->21|960->51|999->53|2280->1306|2309->1307|2401->1372|2429->1373|2563->1471|2592->1478|2624->1483|2652->1484|2691->1496|2719->1497|2852->1599
-                    LINES: 26->1|29->1|31->3|31->3|31->3|84->56|84->56|87->59|87->59|90->62|90->62|91->63|91->63|94->66|94->66|98->70
+                    HASH: a0340fd357bdeb5724dd2c1d7275f1ed5c2373e8
+                    MATRIX: 774->1|885->18|922->21|960->51|999->53|1375->393|1390->399|1433->420|2491->1450|2520->1451|2612->1516|2640->1517|2774->1615|2803->1622|2835->1627|2863->1628|2902->1640|2930->1641|3063->1743
+                    LINES: 26->1|29->1|31->3|31->3|31->3|41->13|41->13|41->13|87->59|87->59|90->62|90->62|93->65|93->65|94->66|94->66|97->69|97->69|101->73
                     -- GENERATED --
                 */
             
