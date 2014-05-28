@@ -1,13 +1,12 @@
 package models;
 
-import java.io.UnsupportedEncodingException;
+
 import java.net.URLDecoder;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import play.data.validation.*;
+import java.util.ArrayList;
 
 import javax.sql.DataSource;
 
@@ -66,11 +65,56 @@ public class DatabaseConnection {
 		try {
 			ResultSet result=statement.executeQuery(SELECT_SQL);
 			if(result.next()) return true;
+			result.close();
 		} catch (SQLException e) {
 			return false;
 		}
 		return false;
 	
+	}
+	
+	public String getSessionStat(String sessionId){
+		int A=0,B=0,C=0;
+		ResultSet result;
+		String SELECT_VA="SELECT COUNT(*) AS total FROM votes WHERE idsession='"+sessionId+"' and vote = 'A';"; 
+		String SELECT_VB="SELECT COUNT(*) AS total  FROM votes WHERE idsession='"+sessionId+"' and vote = 'B';"; 
+		String SELECT_VC="SELECT COUNT(*) AS total  FROM votes WHERE idsession='"+sessionId+"' and vote = 'C';"; 
+		try {
+			 result=statement.executeQuery(SELECT_VA);
+			 while(result.next()){
+                 A=result.getInt("total");                              
+               }
+			 result=statement.executeQuery(SELECT_VB);
+			 while(result.next()){
+                 B=result.getInt("total");                              
+               }
+			 result=statement.executeQuery(SELECT_VC);
+			 while(result.next()){
+                 C=result.getInt("total");                              
+               }
+			 result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return "["+A+","+B+","+C+"]";
+	}
+	
+	public ArrayList<Sessions> getsessions(){
+		ArrayList<Sessions> sessions=new ArrayList<Sessions>();
+		ResultSet result;
+		String  SELECT_SESSIONS= "SELECT DISTINCT idsession from votes;";
+		
+		try {
+			 result=statement.executeQuery(SELECT_SESSIONS);
+			 while(result.next()){
+                sessions.add(new Sessions(result.getString("idsession")));                              
+              }
+			
+			 result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return sessions;
 	}
 	
 }

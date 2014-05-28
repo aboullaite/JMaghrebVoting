@@ -33,7 +33,7 @@ Seq[Any](format.raw/*1.33*/("""
       <div class="row">
     <div class="col-md-10 col-md-offset-2">
         <h1>Jmaghreb Voting System</h1>
-        <p> This is just a simple application shown Jmaghreb voting System prototype </p>
+        <p> This is just a simple application shown Jmaghreb voting System prototype ... </p>
             </div>
       </div>  
           
@@ -69,19 +69,11 @@ Seq[Any](format.raw/*1.33*/("""
     </div>
   </div>
 </div>
-""")))})),format.raw/*44.2*/("""
-      <div class="footer">
-      <div class="row">
-    <div class="col-md-2 col-md-offset-5">
-     <br>
-        <p>&copy; Jmaghreb 2014</p>
-        </div>
 </div>
-      </div>
-
-    </div> <!-- /container -->
+""")))})),format.raw/*45.2*/("""
+  
  
-""")))})),format.raw/*56.2*/("""
+""")))})),format.raw/*48.2*/("""
 """))}
     }
     
@@ -94,11 +86,11 @@ Seq[Any](format.raw/*1.33*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue May 27 21:43:12 WEST 2014
+                    DATE: Wed May 28 01:28:02 WEST 2014
                     SOURCE: C:/Users/mohammed/WorkspacePlay/JmaghrebVoting/app/views/login.scala.html
-                    HASH: c80a96652716aff86a54f95ca0002178d756ae2e
-                    MATRIX: 791->1|916->32|953->35|991->65|1030->67|1359->361|1373->367|1420->405|1460->407|1498->410|1531->434|1571->436|1708->537|1722->541|1765->561|1819->584|2104->832|2127->845|2156->851|2776->1440|3030->1663
-                    LINES: 26->1|29->1|30->2|30->2|30->2|41->13|41->13|41->13|41->13|42->14|42->14|42->14|44->16|44->16|44->16|46->18|51->23|51->23|51->23|72->44|84->56
+                    HASH: f885309f256613b1342921e5b09a4a77bc547c42
+                    MATRIX: 791->1|916->32|953->35|991->65|1030->67|1363->365|1377->371|1424->409|1464->411|1502->414|1535->438|1575->440|1712->541|1726->545|1769->565|1823->588|2108->836|2131->849|2160->855|2788->1452|2829->1462
+                    LINES: 26->1|29->1|30->2|30->2|30->2|41->13|41->13|41->13|41->13|42->14|42->14|42->14|44->16|44->16|44->16|46->18|51->23|51->23|51->23|73->45|76->48
                     -- GENERATED --
                 */
             

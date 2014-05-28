@@ -9,6 +9,8 @@ POST    /                                controllers.Application.authenticate()
 #Home page                                   
 GET     /                                controllers.Application.index()
 
+GET     /votes                                controllers.Application.getVoteStats()
+
 # Insert votes
 GET     /idSession/:idSession/idVoter/:idVoter/vote/:vote/time/:time                          controllers.Application.saveVote(idSession : String, idVoter : String, vote : String, time : String)
 

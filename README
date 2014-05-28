@@ -2,3 +2,5 @@ Jmaghreb'14 Voting System
 =====================================
 
 This is the repository for JMaghreb Voting system and MoroccoJUG IoT challenge.
+
+A demo application is deployed on Heroku: http://jmaghrebvoting.herokuapp.com/

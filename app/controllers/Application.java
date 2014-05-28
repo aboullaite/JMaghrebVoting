@@ -5,12 +5,15 @@ package controllers;
 import java.net.URLDecoder;
 import java.sql.Connection;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import play.data.*;
 
 import javax.sql.DataSource;
 
 import models.DatabaseConnection;
+import models.Sessions;
 import views.html.*;
 import play.db.DB;
 import play.mvc.Controller;
@@ -26,7 +29,21 @@ public class Application extends Controller {
     	if(login == null) return redirect(
 	            routes.Application.login()
 	        );
-    	else return ok(index.render("[100,30,20]"));
+    	else {
+    		 DynamicForm requestData = Form.form().bindFromRequest();
+       	 String sessionID = requestData.get("sessionId");
+       	if(sessionID!=null){
+       	 db.connect();
+       	 String stat=db.getSessionStat(sessionID);
+       	 List<Sessions> sessions=db.getsessions();
+       	 db.close();
+       	return ok(index.render(stat,sessions));
+       	}
+        db.connect();
+      	 ArrayList<Sessions> sessions=db.getsessions();
+      	 db.close();
+    		return ok(index.render("",sessions));
+    	}
     }
    
    
@@ -34,7 +51,7 @@ public class Application extends Controller {
         return ok(login.render(Form.form(Login.class)));
     }
     public static Result logout() {
-    	session().remove("email");
+    	session().clear();
     	return redirect(
 	            routes.Application.login()
 	        );
@@ -60,8 +77,33 @@ public class Application extends Controller {
      
     }
     
+    
+    public static Result getVoteStats(){
+    	 DynamicForm requestData = Form.form().bindFromRequest();
+    	 String sessionID = requestData.get("sessionId");
+    	 db.connect();
+    	 String stat=db.getSessionStat(sessionID);
+    	 db.close();
+    	 
+    	return ok(stat);
+    }
   //login class
     public static class Login {
+
+        public String email;
+        public String password;
+        public String validate() {
+        	db.connect();
+        	boolean login= db.authenticate(email, password);
+        	db.close();
+            if (login) {
+            	return null;
+            }
+            return "Invalid email or password";
+        }
+    }
+    
+    public static class ListSession {
 
         public String email;
         public String password;
